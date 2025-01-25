@@ -1,0 +1,653 @@
+Delivered-To: dpt.paz@gmail.com
+Received: by 2002:a9a:5f45:0:b0:299:b5d:eea2 with SMTP id e5csp1317017lkg;
+        Thu, 1 Aug 2024 18:26:25 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFohugAE2aJOE6h0azdFSHhwHHW0EzpOweGcBFm4IfFHDQW/khqV0b9Nhkw/AeUfSLnTxoS
+X-Received: by 2002:a05:6214:5990:b0:6b5:e9a6:8416 with SMTP id 6a1803df08f44-6bb984a55d3mr28737506d6.48.1722561985278;
+        Thu, 01 Aug 2024 18:26:25 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1722561985; cv=none;
+        d=google.com; s=arc-20160816;
+        b=hXyo9DKAyx1ZOcdN9N8TwxAN6dOBqq0M/vug/ASHndrOdaDjiLWbJ4+VwXKGxW2kGd
+         zKLe1C/FG1yk6tN6ZS4zYTrhwsqyDpYfWqDZ/v/RMNeM8Rrn1zPMFfagQbahiU+KqsgY
+         4wM+OhdZ7WYTqmMTcOsS7MjnCbHXuLZYZR+4SHk3/kRdAzQlG5ujRS9IbSIyuR9/GXx4
+         JUwHn6sG9Ik8+tA1ho40wLcZh8kg3/o2pZ4hffY6Vpno6L3xH32oWHnoP4lgDhmi6yHo
+         WerqsQoBB6JNzmwz1AJg2F7dSqW1PkzcPP02qMljGA4mbcfFx94BOJhlzN1Ae7QOsH9m
+         GUeA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:list-unsubscribe-post:list-unsubscribe:feedback-id:reply-to
+         :subject:message-id:mime-version:from:date:content-transfer-encoding
+         :dkim-signature:dkim-signature;
+        bh=S3y+UaRHGX0GZ826sCbZJLvAcvzYUK/axk5iOB5HDBc=;
+        fh=oahx+mqUfMpcWVPdVQqiwVBP0cym2hoB0T8Zv2JnA8g=;
+        b=FTq2PP12eFKyXt+LWx4coCb3smCv0Kswhwhkr/ehWOjU9tRrtaxIc1t3O+DVYOfQmI
+         gvFguQORQdBYh23y5+oZcRgSTMV6+BsJv13dlBG9mAaQuqC1zTTaGZ2BiT30Xpb+KhHx
+         zEQEbjrDAxMaboVT9YzOwYwV/37rV4M2Kjp2mcdyy7i4Ef3J4wv0n+i8psGP+eZVWmIp
+         l0ig3xKkFUw9cHcF/ydTLnWkVEZTmzrB3aQtO4MUFQjFIZhtEKv54OaOPWbakx3xKVLd
+         EEVwVeQoKDXQjOE9zfYoJoqM0+j3TM+UU2K6ejN4pjJfiwqbXtzzCEwoDp2BPdr9xLcp
+         maMA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@yd4mue.fi38.fdske.com header.s=fde header.b=WqNvmPCr;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=E6o83qoj;
+       spf=pass (google.com: domain of bounces+44688141-0ab7-dpt.paz=gmail.com@fdesp.yd4mue.fi38.fdske.com designates 167.89.105.136 as permitted sender) smtp.mailfrom="bounces+44688141-0ab7-dpt.paz=gmail.com@fdesp.yd4mue.fi38.fdske.com"
+Return-Path: <bounces+44688141-0ab7-dpt.paz=gmail.com@fdesp.yd4mue.fi38.fdske.com>
+Received: from o1.sg.m.flodesk.com (o1.sg.m.flodesk.com. [167.89.105.136])
+        by mx.google.com with ESMTPS id 6a1803df08f44-6bb9c777601si6784176d6.64.2024.08.01.18.26.24
+        for <dpt.paz@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 01 Aug 2024 18:26:25 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+44688141-0ab7-dpt.paz=gmail.com@fdesp.yd4mue.fi38.fdske.com designates 167.89.105.136 as permitted sender) client-ip=167.89.105.136;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@yd4mue.fi38.fdske.com header.s=fde header.b=WqNvmPCr;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=E6o83qoj;
+       spf=pass (google.com: domain of bounces+44688141-0ab7-dpt.paz=gmail.com@fdesp.yd4mue.fi38.fdske.com designates 167.89.105.136 as permitted sender) smtp.mailfrom="bounces+44688141-0ab7-dpt.paz=gmail.com@fdesp.yd4mue.fi38.fdske.com"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yd4mue.fi38.fdske.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:list-unsubscribe:list-unsubscribe-post:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=fde; bh=S3y+UaRHGX0GZ826sCbZJLvAcvzYUK/axk5iOB5HDBc=;
+	b=WqNvmPCr0FC8zsdjZ0GGhKnsTwyyCHJF4pjH2Xpzb6Njo0xZzq4/uHo6xU3okYr4Muy0
+	Ea4qm//xZ85gJ7CfDNswyN2NF7jGdKCVEitiP4g60qadA/E3Iuj19hGmrCqzjqgdF/WXM6
+	Cq1yo7PM86yHo+u4f/J3q97fXyyJrjgcw=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:list-unsubscribe:list-unsubscribe-post:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=S3y+UaRHGX0GZ826sCbZJLvAcvzYUK/axk5iOB5HDBc=;
+	b=E6o83qojYPys0pcoP/LvgF6XO5lKB+d1bBgdI8jN9hyxvNPwgkqQvKZPRl12y+4HHdw1
+	XDB/mmdQxScmudTr4QPke6u63k6430bjA1G5t2C/cZhhDeOpW8sK23n3cBRACuwXh8ZUxc
+	ZHWDrF5QodCmUV48EPQgXm23wgXl4dELQ=
+Received: by recvd-b887ddd65-6p9l2 with SMTP id recvd-b887ddd65-6p9l2-1-66AC35C0-8
+	2024-08-02 01:26:24.485990905 +0000 UTC m=+274069.868391595
+Received: from NDQ2ODgxNDE (unknown)
+	by geopod-ismtpd-25 (SG) with HTTP
+	id KyS_LgLoRVWcM1UchWrZqA
+	Fri, 02 Aug 2024 01:26:24.467 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Fri, 02 Aug 2024 01:26:24 +0000 (UTC)
+From: Alex Paz <info@concapconsulting.com>
+Mime-Version: 1.0
+Message-ID: <KyS_LgLoRVWcM1UchWrZqA@geopod-ismtpd-25>
+Subject: The In-depth KAHAL Prospectus + Information
+Reply-To: Alex Paz <info@concapconsulting.com>
+Feedback-ID: fdesp-yd4mue
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Chttps=3A=2F=2Fform=2Eflodesk=2Ecom=2Fpreferences=2FRzhMaVBPNDdQRWNNSGs2OEQu?=
+ =?us-ascii?Q?UWRZUDZpUERiSlhBNldBVFZnUU8tN1R4ZE1Ea2E?=
+ =?us-ascii?Q?tRi5XZExNJmhJWnk4dWowN0dPU25KQjRmU3YzUE?=
+ =?us-ascii?Q?c2LlVDVFljR1I0OFpIaE5EOTQ9SQ=2Foc-unsubsc?=
+ =?us-ascii?Q?ribe=3E?=
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Feedback-ID: 44688141:SG
+X-SG-EID: 
+ =?us-ascii?Q?u001=2ECW1fcEjRp+DAONZ4veQ=2FDK6t9SsI+zfEV4lTDXL2yj4EWr00hw84x1uzA?=
+ =?us-ascii?Q?btL7EEF8q50dScmWSnntAhTZaDW9nHztzTbtAJv?=
+ =?us-ascii?Q?pVBhKLpTR=2Fh2mS6sTj8NntCXpz3Bfk3KqcycBI2?=
+ =?us-ascii?Q?84t0Q2NEmI=2FyAfUIMnY1dzjIn9Ijj8xuLi0q46M?=
+ =?us-ascii?Q?rZjhItWR9IzZSNenZ6yHlg9tFPDB=2FR6aGruaVsw?=
+ =?us-ascii?Q?bgLDZZtgnArOYSNgs7uRqM=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprCP2hMuZSnyB9tfr?=
+ =?us-ascii?Q?2qtGFkixLPasqQuX9iK8Hfj3yC5JqzhAg8u=2FQJO?=
+ =?us-ascii?Q?AZWQb=2FS=2Fb502xc8jMpOpyr6j6SSrzmVVEw2+Lt3?=
+ =?us-ascii?Q?puGxwtJbSw64nBL7VYenxCizQlpbM3Iz9542tR6?=
+ =?us-ascii?Q?HaNd8NRCinfa0HA7pjsvpR=2FS0MtXZZBgWa6ZApq?=
+ =?us-ascii?Q?yWnStDyPjtAQ=2FyMWgCGJsSKrg9M828mi8AEaEka?=
+ =?us-ascii?Q?zwQgPB7vevL6li8tafU4o7+pgeP75szzIQHkMDp?=
+ =?us-ascii?Q?HEfWaKFt43vnXEAdiD2=2FYF6kTgoIzto3=2Fqsyh5Q?=
+ =?us-ascii?Q?9lf7nFc8goj5UPFRToUgAsd3KvJCzoqs8=3D?=
+To: dpt.paz@gmail.com
+X-Entity-ID: u001.JB/FVrt6QAFNrhJO/VPmGw==
+
+<!DOCTYPE html><html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:=
+schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:offi=
+ce" lang=3D"en"><head><title>The In-depth KAHAL Prospectus + Information</t=
+itle>
+ =20
+  <!--[if !mso]><!-->
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"/>
+  <!--<![endif]-->
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8"/>
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0"/>
+<style type=3D"text/css">
+  #outlook a { padding: 0; }
+  .ReadMsgBody { width: 100%; }
+  .ExternalClass { width: 100%; }
+  .ExternalClass * { line-height:100%; }
+  body { margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-si=
+ze-adjust: 100%; }
+  table, td { border-collapse:collapse; mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt; }
+  img { border: 0; height: auto; line-height: 100%; outline: none; text-dec=
+oration: none; -ms-interpolation-mode: bicubic; }
+  p { display: block; margin: 13px 0; }
+</style>
+<!--[if !mso]><!-->
+<style type=3D"text/css">
+  @media only screen and (max-width:480px) {
+    @-ms-viewport { width:320px; }
+    @viewport { width:320px; }
+  }
+</style>
+<!--<![endif]-->
+<!--[if mso]>
+<xml>
+  <o:OfficeDocumentSettings>
+    <o:AllowPNG/>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+  </o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<!--[if lte mso 11]>
+<style type=3D"text/css">
+  .outlook-group-fix {
+    width:100% !important;
+  }
+</style>
+<![endif]-->
+
+<!--[if !mso]><!-->
+    <link href=3D"https://assets.flodesk.com/sebastian-bobby.css" rel=3D"st=
+ylesheet" type=3D"text/css"/>
+<link href=3D"https://assets.flodesk.com/sebastian-bobby-slanted.css" rel=
+=3D"stylesheet" type=3D"text/css"/>
+  <!--<![endif]--><style type=3D"text/css">
+          *,
+          *::before,
+          *::after {
+            box-sizing: border-box;
+          }
+          body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          }
+          p,
+          .mj-page p{
+            margin: 0;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+          }
+          .mj-page a{
+            color: #b8b8b8;
+            text-decoration: none;
+          }
+          .is-underlined a{
+            text-decoration: underline;
+            text-underline-position: under;
+            text-underline-offset: calc(2px - 0.1em);
+          }
+          .mj-page a:hover{
+            color: #b8b8b8;
+          }
+          @media only screen and (max-width: 479px) {
+            .footer-center{
+              border: none !important;
+            }
+          }
+        </style><style type=3D"text/css">
+      @media only screen and (min-width:480px) {
+        .mj-column-per-100 { width:100%!important; }
+      }
+    </style>
+<style type=3D"text/css">
+    .mj-column-padding--top-0 {padding-top: 0px;}
+.mj-column-padding--bottom-0 {padding-bottom: 0px;}
+.mj-column-padding--left-0 {padding-left: 0px;}
+.mj-column-padding--right-0 {padding-right: 0px;}
+  </style>
+</head>
+<body style=3D"background: rgb(255, 255, 255);"><span class=3D"preheader" s=
+tyle=3D"color: transparent; display: none; height: 0; max-height: 0; max-wi=
+dth: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; wi=
+dth: 0;">&lt;~~~~ All the insider details on KAHAL are right here. =C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=
+=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C</span>
+ =20
+  <div class=3D"mj-page" style=3D"background-color:#ffffff;padding:0px 0 0p=
+x 0"><div class=3D"mj-container" style=3D"max-width:600px;margin-left:auto;=
+margin-right:auto"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" width=3D"600" align=3D"center" style=3D"width:600px;">
+        <tr>
+          <td style=3D"line-height:0px;font-size:0px;mso-line-height-rule:e=
+xactly;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+#ffffff;color:#333333"><table role=3D"presentation" cellpadding=3D"0" cells=
+pacing=3D"0" style=3D"font-size:0px;width:100%;background:#ffffff;color:#33=
+3333" align=3D"center" border=3D"0"><tbody><tr><td style=3D"text-align:cent=
+er;vertical-align:top;border:0px solid #e9e9e9;direction:ltr;font-size:0px;=
+padding:0px"><div style=3D"display:block;margin:0"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333"><table role=3D"presentation" cellpadding=3D"0" c=
+ellspacing=3D"0" style=3D"font-size:0px;width:100%;background:transparent;c=
+olor:#333333" align=3D"center" border=3D"0"><tbody><tr><td style=3D"text-al=
+ign:center;vertical-align:middle;direction:ltr;font-size:0px;padding:0px"><=
+div style=3D"display:block;margin:0"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr =
+class=3D"fd-spacer"><td style=3D"word-wrap:break-word;font-size:0px;padding=
+:0px"><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"width:100%"><tbody><tr><td height=3D"60" style=3D"vertica=
+l-align:top"><div style=3D"display:block;font-size:1px;height:60px;line-hei=
+ght:60px;white-space:nowrap">=C2=A0</div></td></tr></tbody></table></td></t=
+r></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-logo-outlook"=
+>
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333" class=3D"fd-logo"><table role=3D"presentation" c=
+ellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;backgr=
+ound:transparent;color:#333333" align=3D"center" border=3D"0"><tbody><tr><t=
+d style=3D"text-align:center;vertical-align:middle;direction:ltr;font-size:=
+0px;padding:0px 0px 0px 0px"><div style=3D"display:block;margin:0"><!--[if =
+mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr =
+class=3D""><td style=3D"word-wrap:break-word;font-size:0px;padding:0px" ali=
+gn=3D"center"><div style=3D"display:inline-block;max-width:100%;width:30.83=
+3333333333336%;min-width:50px"><table role=3D"presentation" cellpadding=3D"=
+0" cellspacing=3D"0" style=3D"table-layout:fixed;width:100%;border-collapse=
+:collapse;border-spacing:0px" align=3D"center" border=3D"0"><tbody><tr><td =
+style=3D"border:none;text-align:center" align=3D"center"><a href=3D"https:/=
+/yd4mue.fi38.fdske.com/ec/gAAAAABmrDXAM4uzlJgI4-ZLEH54M6IBlllycVvaOwLeL69Na=
+1ZaJEU8x-HQNlCUXf1KqDwBbOGNU-sQ8i187qhcT6kN7_MUyaXOU7uGvIxAc5EHCeMVpYMoLAsn=
+WPbeJtwQk84wJnyJF-yr8kgwfA9CabWjKzP7JjEypwtNENJ_ifl8dgSjBytGbb639l6AKNXw9ab=
+iJrmFUpc20yZW_PETqSaPMXIf_-IpQLd80AXojbgnpKT61-QDgafqMQ8G5PzDcP_1l855lC_Ap-=
+I5OtMm1vXCWFRxXA7ag1pFXz4-YCBUOlu0Ga7eoX--43IEc-1kxkucLxUCkIDFm3JbZpq-ala8D=
+JlYPp_VUKUPNgsmjWvUplT8p7Mb20wyL0wLgqBxyi2TFA_eE-9JVfXxG2DAodLAEiJcuA=3D=3D=
+" target=3D"_blank"><img alt=3D"Logo" width=3D"185" height=3D"auto" src=3D"=
+https://usercontent.flodesk.com/d5ec16b0-cb80-4b01-86c0-dc4fcb28396e/upload=
+/uf6rsata46/9648b94a-c707-428d-b474-351e375e903d.png?width=3D2048&amp;heigh=
+t=3D2048" style=3D"border:none;border-radius:0px;display:block;font-size:13=
+px;outline:none;text-decoration:none;width:100%;max-width:100%;height:auto"=
+/></a></td></tr></tbody></table></div></td></tr></tbody></table></div></div=
+></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333"><table role=3D"presentation" cellpadding=3D"0" c=
+ellspacing=3D"0" style=3D"font-size:0px;width:100%;background:transparent;c=
+olor:#333333" align=3D"center" border=3D"0"><tbody><tr><td style=3D"text-al=
+ign:center;vertical-align:middle;direction:ltr;font-size:0px;padding:0px"><=
+div style=3D"display:block;margin:0"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr =
+class=3D"fd-spacer"><td style=3D"word-wrap:break-word;font-size:0px;padding=
+:0px"><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"width:100%"><tbody><tr><td height=3D"30" style=3D"vertica=
+l-align:top"><div style=3D"display:block;font-size:1px;height:30px;line-hei=
+ght:30px;white-space:nowrap">=C2=A0</div></td></tr></tbody></table></td></t=
+r></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333"><table role=3D"presentation" cellpadding=3D"0" c=
+ellspacing=3D"0" style=3D"font-size:0px;width:100%;background:transparent;c=
+olor:#333333" align=3D"center" border=3D"0"><tbody><tr><td style=3D"text-al=
+ign:center;vertical-align:middle;direction:ltr;font-size:0px;padding:0px"><=
+div style=3D"display:block;margin:0"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr =
+class=3D"fd-spacer"><td style=3D"word-wrap:break-word;font-size:0px;padding=
+:0px"><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"width:100%"><tbody><tr><td height=3D"30" style=3D"vertica=
+l-align:top"><div style=3D"display:block;font-size:1px;height:30px;line-hei=
+ght:30px;white-space:nowrap">=C2=A0</div></td></tr></tbody></table></td></t=
+r></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-text-outlook"=
+>
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;overflow:hi=
+dden;background:transparent;color:#333333" class=3D"fd-text"><table role=3D=
+"presentation" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;w=
+idth:100%;background:transparent;color:#333333" align=3D"center" border=3D"=
+0"><tbody><tr><td style=3D"text-align:center;vertical-align:top;direction:l=
+tr;font-size:0px;padding:0px"><div style=3D"display:block;margin:0"><!--[if=
+ mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"vertical-align:top;display:inline-block;direction:ltr;font-siz=
+e:13px;text-align:left;width:100%"><div class=3D"mj-column-padding mj-colum=
+n-padding--top-0 mj-column-padding--bottom-0 mj-column-padding--left-0 mj-c=
+olumn-padding--right-0"><div style=3D"overflow:hidden"><table role=3D"prese=
+ntation" style=3D"color:inherit;vertical-align:top;table-layout:fixed;max-w=
+idth:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr><td style=
+=3D"word-wrap:break-word;font-size:0px;padding:10px 30px 10px 30px" align=
+=3D"left"><div style=3D"cursor:auto;color:#000000;font-family:Baskerville, =
+serif;font-size:18px;font-weight:400;line-height:1.5999999999999999;letter-=
+spacing:0px;text-align:left;text-transform:none"><div data-paragraph=3D"tru=
+e">Hey Alex!<br/>=C2=A0</div><div data-paragraph=3D"true">I wanted to share=
+ this more in-depth look at=E2=80=93 the KAHAL Prospectus and any other imp=
+ortant collateral information.=C2=A0</div><div data-paragraph=3D"true">=C2=
+=A0</div><div data-paragraph=3D"true">Dive into the details of what makes K=
+AHAL not just a residence but a lifestyle investment in paradise. =F0=9F=8C=
+=B4</div><div data-paragraph=3D"true">=C2=A0</div><div data-paragraph=3D"tr=
+ue">Link to: <a href=3D"https://yd4mue.fi38.fdske.com/ec/gAAAAABmrDXAsroIo3=
+pIiYpNBCwICmg3ywPNjcc-uahQ8bH7RYYBCODjYaDeqq7D_dtmK5V-RNZps_vG1_rxbF6K-BjNQ=
+4mKTQ12sgOEr_MoyCMCmpyBklC1sa_HGKyTsi7xRHIQxHaGia_JWJf4nRhkbb-wgpoKBJ1CreWs=
+WNYiqkX6iGu8kzTG5OtJp8HAF3JmfqX0g_WH50--IBzlXlsc0Ew_tfJPwJ6c5OjkdQNb0IKiXfB=
+TD_37AJSGWm2XVUw8NMdFY3wUSncefQskzx2a3CKordE7CPAAgMtMUZGLymr1XtU4CQ3KWvDhw9=
+gr3yoRTINqoGCuYg1fl65XItwXczjmFOFAJXoh8ebdo9TODjm6NftFlw53vRnz7Fk6UVGo3dS9-=
+D2gEmwyNFD6kKy8Zc9QlYTXpWp7nr1_bwPsKUEGohx7orLV48wxwHBVjGFgh3YYlO1TUis_x_UH=
+Cw7NjG8O5s-7C81X5Rk6iQ3R0IHSUkSRj8M=3D" data-custom=3D"link"><span style=3D=
+"color:#008bd2;"><strong>KAHAL Marketing Pamphlet</strong></span></a><br/>L=
+ink to:<strong> </strong><a href=3D"https://yd4mue.fi38.fdske.com/ec/gAAAAA=
+BmrDXA_aRuT9wCAoxY_ql2LDW-l-6wRIMR_oMt4CfhZDntqiKDnF7h3hXjSvDngKl-4NWZB6NOK=
+cvQi1eLCU-AzkMNNnyHYOGR9mhjtILlJU7qqovGymB_lhEKMAmNPENOI5YIUKRLkfcl6iK-Wily=
+rhTteYWuIuIX4gMH9Z6SSFo0iW89-FeNYCLMXBGaTIYBzgz9jsClmhSnbShgr9iyuQbwucIybth=
+8_XDpB2JPVKIGsh4yXdw3eFJDnuu9JCx_lbEikcv-Wa11qRF6tD5oRo-dh7ZclANY9myZOhw-u6=
+RTDhaRSkVcNjrqYPRq05rPPWk_TEA2aN7x68gJycqWSOmuZ9vnrC1ItLf7gzNsW7Z5haq2rzHBU=
+XEniVgKaFwSBdzRw9QZrc293I-_YzatbDi3Zf0JbCuEn200Zl-Kvd98Cb8Imli7kHN3LsYb00IA=
+yPdBlLAJrTYW9k-4dllg9k_Ed6IVnr9UyX2K5RW-1yZ4LVNBpoJW0iPu8z2vss12pWgL" data-=
+custom=3D"link"><span style=3D"color:#008bd2;"><strong>KAHAL Prospectus Ove=
+rview</strong></span></a><br/>Link to: <a href=3D"https://yd4mue.fi38.fdske=
+.com/ec/gAAAAABmrDXAri3vujkIq_dRU-zGaxBcsmiLPWWnf7qBN71v9vex31us7IFa4T6MD61=
+tAiC2oNFh52Yst3BA93O0ellUKF7kFQ1f_iw06O7cLcehM4tGYqk38W-hbwzaL_rJ7zFZXaeg8l=
+3N_MqXAzn6Ru3d6neaPvGxjULD-96X4cbN8vkET6O0JUQTmrMayPV0Xk0jnSfkV_4IIRS-vmOOz=
+zg5aB-9S2_Y_ydNu716DhwQ-x3TjFyCprD-FGTYOxjkeXjfQMbu1-XTMTAgmSYP4ldkBqPqfd7N=
+H6r51qLtd7LYdx8_0fTMAbrSt0Bxo8XdECfPPwbi52cVmD4iXJUdgXVZVSPjGCb43YCffzUTVcJ=
+HEL17R7RObJA0jqqNOSzqdHb-nd9tbpBdCuRlK6aZhcSPj8juM2UEqiKs0CQNNLtuL4etxsg=3D=
+" data-custom=3D"link"><span style=3D"color:#008bd2;"><strong>4K Render for=
+ KAHAL&#39;s 2Bed on YouTube</strong></span></a></div><div data-paragraph=
+=3D"true">Link to: <a href=3D"https://yd4mue.fi38.fdske.com/ec/gAAAAABmrDXA=
+0UaViCobkJeL4WRMuZ833JXyScOCE5601V0IMlhC4lZsp2Co9Vu-CffgxxU7QU4QltM19BCCyFs=
+hiyuqA1Qqq0LXlJenAFWPa1ZF9v60BZlIfdW4BCPYVFYDNB_CAmk4nQQEd_X_Pdnq2llxSfRXSV=
+gNz7azCH-YKUuaeoMhcwRAE_J9ZRoTIZmsV61dGRm8a3DBm3DfGxNigduz5in_kAeL0XDTJtTli=
+8urURdNbErisnQRuY0_jx_aBZ5r1h00KmsXODG1Szk_33d8yMtgGP5cKGMEW_dF--38zxUMABv3=
+NuYUCSTUowr83uZysiGv0s0YSjX0DZUeYko_5LL24gNOHZ4VRWNoSuMOGapylgcQP997sovMfJ6=
+tb17c2qf-F2vHI0rlHmmSPUBMrTOUK3ZWvfG1Ontaz92DUh1_NlilQUl2mzBDcvzeRcMO2tdp" =
+data-custom=3D"link"><span style=3D"color:#008bd2;"><strong>4K Render for K=
+AHAL&#39;s 1Bed on YouTube</strong></span></a></div><div data-paragraph=3D"=
+true">Link to: <a href=3D"https://yd4mue.fi38.fdske.com/ec/gAAAAABmrDXABRzJ=
+LLJNWvgLQ9Lel6KAN-wgUmn8_YmbL5jrgBxMIqkjdLTpaTTOFc8m0e8TF0_yjwZTPcehu7tqB9X=
+FKqmJAFEc3NwaSecvfh7ISIG3xHUDsnJEDFbAEN2ZyOmHue5Mzm8mLgSNKp2kqafMYLCisXYQaq=
+WA1YntIjYzGMGiy-2pfgdzKnEmJbpOCZsJbEzReaTTf0DimQfp_yABIbR6Uc9EtpWPamRWwwAiA=
+bezgWrFTbVyGe6eCtgR85Eka59paSAvMqcb3wDVIVrJN_bt4jlA_sGtZozZVqtGGO3NoCxK2IwT=
+Ogyc-4t4U69jWKynUfqmJ_ILLLaKyw4Td8J5_4_cxPDGUxgbPw4mX0PTc3cdBB0T-aDpjy-bxoy=
+u0VVMPGPlkCvuZ1AHjxsY17GZIcbhy7Qrr6OKipj8rviTdWc=3D" data-custom=3D"link"><=
+span style=3D"color:#008bd2;font-weight:700;"><strong>FULL market compariso=
+n for KAHAL in Loreto=C2=A0</strong></span></a></div><div data-paragraph=3D=
+"true">=C2=A0</div><div data-paragraph=3D"true">(make sure to modify the Yo=
+uTube clips to 4K quality!)</div><div data-paragraph=3D"true">=C2=A0</div><=
+div data-paragraph=3D"true">Got questions or thoughts? Hit reply=E2=80=94I&=
+#39;m here! I look forward to hearing from you Alex!</div><div data-paragra=
+ph=3D"true">=C2=A0</div><div data-paragraph=3D"true">Best,</div></div></td>=
+</tr></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-art-outlook f=
+d-art--017-outlook">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#000000" class=3D"fd-art fd-art--017"><table role=3D"pres=
+entation" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:=
+100%;background:transparent;color:#000000" align=3D"center" border=3D"0"><t=
+body><tr><td style=3D"text-align:center;vertical-align:middle;direction:ltr=
+;font-size:0px;padding:0px"><div style=3D"display:block;margin:0"><!--[if m=
+so | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr>=
+<td style=3D"word-wrap:break-word;font-size:0px"><div><div style=3D"display=
+: block; text-align: center;"><img alt=3D"Alex Paz" src=3D"https://usercont=
+ent.flodesk.com/screenshots/d5ec16b0-cb80-4b01-86c0-dc4fcb28396e/66ac35961c=
+ebf9d41fbee585/art-XxCRvyQAVu-719a0066-1a67-4d0b-9e64-58c2e87e50a1.png" sty=
+le=3D"border: none; border-radius:0px; display:block; font-size:13px; outli=
+ne:none; text-decoration:none; width: 100%; max-width: 600px; height:auto" =
+width=3D"600" height=3D"auto"/></div><table role=3D"presentation" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"table-layout:fixed;width:1=
+00%"><tbody></tbody></table></div></td></tr></tbody></table></div></div></d=
+iv><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333"><table role=3D"presentation" cellpadding=3D"0" c=
+ellspacing=3D"0" style=3D"font-size:0px;width:100%;background:transparent;c=
+olor:#333333" align=3D"center" border=3D"0"><tbody><tr><td style=3D"text-al=
+ign:center;vertical-align:middle;direction:ltr;font-size:0px;padding:0px"><=
+div style=3D"display:block;margin:0"><!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr =
+class=3D"fd-spacer"><td style=3D"word-wrap:break-word;font-size:0px;padding=
+:0px"><table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" style=3D"width:100%"><tbody><tr><td height=3D"30" style=3D"vertica=
+l-align:top"><div style=3D"display:block;font-size:1px;height:30px;line-hei=
+ght:30px;white-space:nowrap">=C2=A0</div></td></tr></tbody></table></td></t=
+r></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-address-outlo=
+ok">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333" class=3D"fd-address"><table role=3D"presentation=
+" cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;bac=
+kground:transparent;color:#333333" align=3D"center" border=3D"0"><tbody><tr=
+><td style=3D"text-align:center;vertical-align:middle;direction:ltr;font-si=
+ze:0px;padding:167px 10px 10px 10px"><div style=3D"display:block;margin:0">=
+<!--[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr>=
+<td style=3D"word-wrap:break-word;font-size:0px"><div><table role=3D"presen=
+tation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"table-lay=
+out:fixed;width:100%"><tbody><tr><td style=3D"word-wrap:break-word;font-siz=
+e:0px;padding:0px" align=3D"center"><div style=3D"cursor:auto;color:#797979=
+;font-family:Baskerville, serif;font-size:11px;font-weight:400;line-height:=
+1.8;letter-spacing:0px;text-align:center;text-transform:none">10089 WILLOW =
+CREEK RD<br/>SAN DIEGO, CA 92131, United States</div></td></tr></tbody></ta=
+ble></div></td></tr></tbody></table></div></div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+        </td>
+      </tr>
+      <tr>
+        <td style=3D"width:600px;" class=3D"module-outlook fd-footer-outloo=
+k">
+      <![endif]--><div style=3D"margin:0px auto;max-width:600px;background:=
+transparent;color:#333333" class=3D"fd-footer"><table role=3D"presentation"=
+ cellpadding=3D"0" cellspacing=3D"0" style=3D"font-size:0px;width:100%;back=
+ground:transparent;color:#333333" align=3D"center" border=3D"0"><tbody><tr>=
+<td style=3D"text-align:center;vertical-align:middle;direction:ltr;font-siz=
+e:0px;padding:0px 10px 10px 10px"><div style=3D"display:block;margin:0"><!-=
+-[if mso | IE]>
+      <table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0">
+        <tr>
+          <td style=3D"width:600px;">
+      <![endif]--><div class=3D"mj-column mj-column-per-100 outlook-group-f=
+ix" style=3D"display:inline-block;direction:ltr;font-size:13px;text-align:l=
+eft;width:100%"><div class=3D"mj-column-padding mj-column-padding--top-0 mj=
+-column-padding--bottom-0 mj-column-padding--left-0 mj-column-padding--righ=
+t-0"><div><table role=3D"presentation" style=3D"color:inherit;table-layout:=
+fixed;max-width:100%;width:100%" cellpadding=3D"0" border=3D"0"><tbody><tr>=
+<td style=3D"word-wrap:break-word;font-size:0px"><div><table role=3D"presen=
+tation" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"table-lay=
+out:fixed;width:100%"><tbody><tr class=3D"is-underlined"><td style=3D"word-=
+wrap:break-word;font-size:0px;padding:0px" align=3D"center"><div style=3D"c=
+ursor:auto;color:#797979;font-family:Helvetica, sans-serif;font-size:11px;f=
+ont-weight:400;line-height:1.8;letter-spacing:0px;text-align:center;text-tr=
+ansform:none"><p><a data-link=3D"unsubscribe" href=3D"https://form.flodesk.=
+com/preferences/RzhMaVBPNDdQRWNNSGs2OEQuUWRZUDZpUERiSlhBNldBVFZnUU8tN1R4ZE1=
+Ea2EtRi5XZExNJmhJWnk4dWowN0dPU25KQjRmU3YzUEc2LlVDVFljR1I0OFpIaE5EOTQ9SQ/uns=
+ubscribe" clicktracking=3D"off" ses:no-track=3D"">Unsubscribe</a> or <a dat=
+a-link=3D"preferences" href=3D"https://form.flodesk.com/preferences/V2RYYlB=
+LMThSRmJPRTgyWUMtLWdVUjI1TURjWXRBbmt0LlJxVkYmZktzaVdENlctRk5OOVJLNDRISWlQS2=
+k2WkNRVmlY" clicktracking=3D"off" ses:no-track=3D"">Manage Preferences</a><=
+/p></div></td></tr></tbody></table></div></td></tr></tbody></table></div></=
+div></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+          </td>
+        </tr>
+      </table>
+      <![endif]--></div></td></tr></tbody></table></div><!--[if mso | IE]>
+      </td></tr></table>
+      <![endif]--></div></div>
+
+
+<div style=3D"margin: 0px auto; max-width: 600px; background: transparent">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" align=3D=
+"center" border=3D"0" style=3D"font-size: 0px; width: 100%; background: tra=
+nsparent">
+    <tbody>
+      <tr>
+        <td align=3D"center" style=3D"
+            text-align: center;
+            vertical-align: top;
+            direction: ltr;
+            font-size: 0px;
+            padding: 24px 0px;
+          ">
+          <a clicktracking=3D"off" ses:no-track=3D"" href=3D"https://flodes=
+k.com/c/JPCVLR?utm_medium=3Dreferral&amp;utm_source=3Demail-footer" style=
+=3D"display: inline-block">
+            <img alt=3D"Made with love in Flodesk." src=3D"https://assets.f=
+lodesk.com/assets/viral-footer-202301.png" width=3D"146" height=3D"auto" st=
+yle=3D"
+                border: none;
+                border-radius: 0px;
+                display: block;
+                font-size: 13px;
+                outline: none;
+                text-decoration: none;
+                width: 100%;
+                max-width: 146px;
+                height: auto;
+              "/>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div><img alt=3D"" src=3D"https://yd4mue.fi38.fdske.com/eo/gAAAAABmrDXAuvG=
+4H5uJYuyMoYvEGiiDUQ90PYmmxU8so444frYzkCLoMzvG7tdJmbnjI66do1_NewUuB9z7yVy5ek=
+AFjruE8dN0Me1jLBXdKwoA6r5p1ARh64jZ76DrUH_w9COQD5PtjD4ZQf1ubKFvRlkt2xEaI5PRX=
+gzZvn1U-ikR0tk5qKnkRdjaoq4vkQISWq_7vysg9LmnmKlV4Pg0J2hLa-OaoUj3vj5c_ARq5e-k=
+-RaPG1kWZCaH3CZ29iGeW3-40Dsy7eETuQmvqWt0b8TpIJEsZg=3D=3D" style=3D"display:=
+none!important; width:1px!important; height:1px!important"/></body></html>
