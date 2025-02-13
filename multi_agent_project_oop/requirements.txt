@@ -1,0 +1,9 @@
+langgraph
+langchain
+typing-extensions
+fastapi
+uvicorn
+langchain-community
+langchain-openai
+langchain-chroma
+langchgain-core
