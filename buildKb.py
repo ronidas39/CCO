@@ -11,6 +11,11 @@ from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings,ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader
 from dotenv import load_dotenv
+import streamlit as st
+
+st.title("CHROMA DB KNOWLEDGE BASE RAW LAYER")
+st.write("LLM & API'S ARE NOT INTEGRATED BUT STILL YOU CAN ASK ANYTHING TO THIS KNOWLEDGEBASE")
+
 load_dotenv()
 text_splitter=RecursiveCharacterTextSplitter(chunk_size=4000,chunk_overlap=100)
 
@@ -88,7 +93,7 @@ def addImageToCollection(path,collection_name,image_folder):
     else:
         print("not image found to add")
 
-addImageToCollection("index_db","multimodal_collection","images")
+#addImageToCollection("index_db","multimodal_collection","images")
 def loadEmail(path,collection_name,persist_directory):
     cwd=os.getcwd()
     files = glob.glob(cwd+"/"+path+"/*.eml")
@@ -121,4 +126,16 @@ def loadPdf(path,collection_name,persist_directory):
     # print(context)
 
 #loadPdf("masterdata","text_collection","index_db")
+index_db="index_db"       
+vs=Chroma(collection_name="text_collection",
+                  embedding_function=OpenAIEmbeddings(),
+                  persist_directory=f"./{index_db}")
+
+input=st.text_input("ask anything")
+if input is not None:
+    bt=st.button("submit")
+    if bt:
+        context=vs.similarity_search(input,k=5)
+        st.write(context)
+
         
