@@ -1,8 +1,8 @@
-from getImages import extract_images_from_pdf
+#from getImages import extract_images_from_pdf
 from chromadb.utils.embedding_functions import OpenCLIPEmbeddingFunction
 import chromadb
 import os,glob,shutil,io
-from datasets import load_dataset
+#from datasets import load_dataset
 from chromadb.utils.data_loaders import ImageLoader
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.document_loaders import UnstructuredEmailLoader
@@ -11,13 +11,14 @@ from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings,ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader
 from dotenv import load_dotenv
+from langchain.prompts import ChatPromptTemplate
 import streamlit as st
-
-st.title("CHROMA DB KNOWLEDGE BASE RAW LAYER")
-st.write("LLM & API'S ARE NOT INTEGRATED BUT STILL YOU CAN ASK ANYTHING TO THIS KNOWLEDGEBASE")
+llm=ChatOpenAI(model="gpt-4o")
+st.title("CHROMA DB RAG KNOWLEDGE")
+st.write("LLM & API'S ARE INTEGRATED YOU CAN ASK ANYTHING TO THIS KNOWLEDGEBASE")
 
 load_dotenv()
-text_splitter=RecursiveCharacterTextSplitter(chunk_size=4000,chunk_overlap=100)
+text_splitter=RecursiveCharacterTextSplitter(chunk_size=4000,chunk_overlap=100,separators=["\n"])
 
 
 extensions = ["*.jpg", "*.jpeg", "*.png", "*.gif"]
@@ -126,6 +127,16 @@ def loadPdf(path,collection_name,persist_directory):
     # print(context)
 
 #loadPdf("masterdata","text_collection","index_db")
+template="""
+You are an intelligent human centric real estate agent who can answer any {qsn} asked by user
+based on the given {context} only ,
+answer in 5-7 sesntences only and answer within 300-500 letters only.
+use human style explanation and professional english which is easy to follow 
+use bullets,headings , sub headings whien required , 
+try to explain any terminology if you think it is required
+"""
+prompt=ChatPromptTemplate.from_template(template)
+chain=prompt|llm
 index_db="index_db"       
 vs=Chroma(collection_name="text_collection",
                   embedding_function=OpenAIEmbeddings(),
@@ -136,6 +147,12 @@ if input is not None:
     bt=st.button("submit")
     if bt:
         context=vs.similarity_search(input,k=5)
-        st.write(context)
+        cd=""
+        for xx in context:
+            cd=cd + xx.page_content.replace("\n"," ")
+        response=chain.invoke({"qsn":input,"context":cd})
+        print(input)
+        st.write(response.content)
+        
 
         
